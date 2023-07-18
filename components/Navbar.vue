@@ -3,9 +3,14 @@ import { Container, Navbar, NuxtLink } from '../.nuxt/components';
 
     <div class="navbar">
         <Container>
-            <NuxtLink to="/" class="logo">
-                <img src="/images/LOGO_TRANSPARENT.png" alt="Wevolution.biz logo">
-            </NuxtLink>
+            <div class="navbarInner">
+                <NuxtLink to="/" class="logo">
+                    <img src="/images/LOGO_TRANSPARENT.png" alt="Wevolution.biz logo">
+                </NuxtLink>
+                <div class="navbarLinks">
+                    <CalendlyButton />
+                </div>
+            </div>
         </Container>
     </div>
 
@@ -25,20 +30,28 @@ import { Container, Navbar, NuxtLink } from '../.nuxt/components';
         width: 100%;
         background: rgb(0,0,0);
         background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-        height: 78px;
+        height: 88px;
         border-bottom: 6px solid gold;
         backdrop-filter: blur(10px);
         display: flex;
         align-items: center;
+
+        .navbarInner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
     }
 
     .logo {
-        width: 64px;
-        height: 64px;
+        display: flex;
+        align-items: center;
 
         img {
-            width: 64px;
-            height: 64px;
+            width: 88px;
+            height: 88px;
             animation: spin 100s linear infinite;
         }
     }

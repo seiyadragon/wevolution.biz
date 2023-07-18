@@ -12,7 +12,6 @@
         background-color: transparent;
         margin-left: auto;
         margin-right: auto;
-        text-transform: uppercase;
 
         @media screen and (min-width: 320px) {
             width: 95%;
