@@ -1,4 +1,4 @@
-import { Container, Navbar, NuxtLink } from '../.nuxt/components';
+import { Container, Navbar, NuxtLink, Heading } from '../.nuxt/components';
 <template>
 
     <div class="navbar">
@@ -6,6 +6,7 @@ import { Container, Navbar, NuxtLink } from '../.nuxt/components';
             <div class="navbarInner">
                 <NuxtLink to="/" class="logo">
                     <img src="/images/LOGO_TRANSPARENT.png" alt="Wevolution.biz logo">
+                    <Heading :level="1" class="banner">Wevolution</Heading>
                 </NuxtLink>
                 <div class="navbarLinks">
                     <CalendlyButton />
@@ -48,11 +49,19 @@ import { Container, Navbar, NuxtLink } from '../.nuxt/components';
     .logo {
         display: flex;
         align-items: center;
+        text-decoration: none;
 
         img {
             width: 88px;
             height: 88px;
             animation: spin 100s linear infinite;
+        }
+
+        .banner {
+            color: white;
+            margin-left: 16px;
+            text-decoration: none;
+            font-size: 2em;
         }
     }
 

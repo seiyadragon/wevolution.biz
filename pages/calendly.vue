@@ -1,7 +1,20 @@
 <template>
 
     <div>
-
+        <header>
+            <Navbar />
+        </header>
+        <div class="spaceWaster"></div>
+        <Container>
+            <Heading :level="1">{{ pageData.Heading1[0] }}</Heading>
+            <Heading :level="2">{{ pageData.Heading2[0] }}</Heading>
+        </Container>
+        <div class="spaceWaster"></div>
+        <GradientPanel middleColor="white" top-color="#FF6539" bottomColor="#FF6539">
+            <Container>
+                <Heading :level="3">{{ pageData.Heading3[0] }}</Heading>
+            </Container>
+        </GradientPanel>
     </div>
 
 </template>
@@ -9,7 +22,7 @@
 <script lang="ts" setup>
 
     import { ref } from 'vue';
-    import data from '../src/data/index.json'
+    import data from '../src/data/calendly.json'
 
     //load the file /data/index.json and put it in a ref use the fetch function
     const pageData = ref(data);

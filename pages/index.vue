@@ -3,37 +3,35 @@ import { Container, Title, Heading } from '../.nuxt/components';
 <template>
 
     <div>
-        <NuxtLayout>
-            <header>
-                <Navbar />
-            </header>
-            <div class="spaceWaster"></div>
+        <header>
+            <Navbar />
+        </header>
+        <div class="spaceWaster"></div>
+        <Container>
+            <Heading :level="1">{{ pageData.Heading1[0] }}</Heading>
+            <Heading :level="2">{{ pageData.Heading2[0] }}</Heading>
+        </Container>
+        <div class="spaceWaster"></div>
+        <GradientPanel middleColor="red" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
-                <Heading :level="1">{{ pageData.Heading1[0] }}</Heading>
-                <Heading :level="2">{{ pageData.Heading2[0] }}</Heading>
+                <Heading :level="3">{{ pageData.Heading3[0] }}</Heading>
+                <Text>{{ pageData.Paragraph1[0] }}</Text>
+                <Text>{{ pageData.Paragraph1[1] }}</Text>
+                <Text>{{ pageData.Paragraph1[2] }}</Text>
+                <Text>{{ pageData.Paragraph1[3] }}</Text>
+                <Text>{{ pageData.Paragraph1[4] }}</Text>
             </Container>
-            <div class="spaceWaster"></div>
-            <GradientPanel middleColor="red" top-color="#FF6539" bottomColor="#FF6539">
-                <Container>
-                    <Heading :level="3">{{ pageData.Heading3[0] }}</Heading>
-                    <Text>{{ pageData.Paragraph1[0] }}</Text>
-                    <Text>{{ pageData.Paragraph1[1] }}</Text>
-                    <Text>{{ pageData.Paragraph1[2] }}</Text>
-                    <Text>{{ pageData.Paragraph1[3] }}</Text>
-                    <Text>{{ pageData.Paragraph1[4] }}</Text>
-                </Container>
-            </GradientPanel>
-            <GradientPanel middleColor="#309960" top-color="#FF6539" bottomColor="#FF6539">
-                <Container>
-                    <Heading :level="3">{{ pageData.Heading3[1] }}</Heading>
-                    <Text>{{ pageData.Paragraph2[0] }}</Text>
-                    <Text>{{ pageData.Paragraph2[1] }}</Text>
-                    <Text>{{ pageData.Paragraph2[2] }}</Text>
-                    <Text>{{ pageData.Paragraph2[3] }}</Text>
-                    <CalendlyButton />
-                </Container>
-            </GradientPanel>
-        </NuxtLayout>
+        </GradientPanel>
+        <GradientPanel middleColor="#309960" top-color="#FF6539" bottomColor="#FF6539">
+            <Container>
+                <Heading :level="3">{{ pageData.Heading3[1] }}</Heading>
+                <Text>{{ pageData.Paragraph2[0] }}</Text>
+                <Text>{{ pageData.Paragraph2[1] }}</Text>
+                <Text>{{ pageData.Paragraph2[2] }}</Text>
+                <Text>{{ pageData.Paragraph2[3] }}</Text>
+                <CalendlyButton />
+            </Container>
+        </GradientPanel>
     </div>
 
 </template>
