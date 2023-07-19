@@ -4,7 +4,7 @@
         <header>
             <Navbar />
         </header>
-        <GradientPanel middleColor="#FF6539" top-color="#FF6539" bottomColor="#FF6539">
+        <GradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="1">{{ pageData.Heading1[0] }}</Heading>
             </Container>

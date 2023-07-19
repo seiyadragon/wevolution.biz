@@ -39,7 +39,7 @@
 
     iframe {
         outline: none;
-        border: solid 12px silver;
+        border: solid 12px white;
         border-radius: 32px;
         box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.75);
         margin-top: 32px;
