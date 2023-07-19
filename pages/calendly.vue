@@ -4,15 +4,14 @@
         <header>
             <Navbar />
         </header>
-        <div class="spaceWaster"></div>
-        <Container>
-            <Heading :level="1">{{ pageData.Heading1[0] }}</Heading>
-            <Heading :level="2">{{ pageData.Heading2[0] }}</Heading>
-        </Container>
-        <div class="spaceWaster"></div>
-        <GradientPanel middleColor="white" top-color="#FF6539" bottomColor="#FF6539">
+        <GradientPanel middleColor="#FF6539" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
-                <Heading :level="3">{{ pageData.Heading3[0] }}</Heading>
+                <Heading :level="1">{{ pageData.Heading1[0] }}</Heading>
+            </Container>
+        </GradientPanel>
+        <GradientPanel middleColor="white" top-color="#FF6539" bottomColor="#FF6539" >
+            <Container>
+                <CalendlyInlineWidget v-bind="calendlyOptions" style="min-height: 930px;"/>
             </Container>
         </GradientPanel>
     </div>
@@ -27,15 +26,16 @@
     //load the file /data/index.json and put it in a ref use the fetch function
     const pageData = ref(data);
 
-</script>
-
-<style lang="scss" scoped>
-
-    .spaceWaster {
-        height: 128px;
+    const calendlyOptions = {
+        url: "https://calendly.com/arlenmolina101/web-discussion",
+        prefill: {
+            name: "Arlen Molina",
+            email: "arlenmolina101@gmail.com",
+            questions: "What are your goals for your website?",
+        }
     }
 
-</style>
+</script>
 
 <style lang="scss">
 

@@ -776,7 +776,7 @@
     which "^3.0.1"
     ws "^8.13.0"
 
-"@nuxt/kit@3.6.3", "@nuxt/kit@^3.6.1":
+"@nuxt/kit@3.6.3", "@nuxt/kit@^3.1.1", "@nuxt/kit@^3.6.1":
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.6.3.tgz#bed7adba36f5027b6e79f5ea32400e621f19cfea"
   integrity sha512-Eq+2whSIsZ+2IdB9J3okYOc+nZHassjt13vJZowxO3dw0rsXTnWGFHx40IX+wrBYE6eiOHjU/cXQ1XHdiU2GyQ==
@@ -4092,6 +4092,14 @@ nuxi@3.6.3:
   integrity sha512-UVokD+9Pq0EoPp2nmkS5K96g/P1BWYEpYCmtX4XW5oZqvkPlEBBdellOWPEb9wgSCBjWYVNpxA2uIRb4yhg1Nw==
   optionalDependencies:
     fsevents "~2.3.2"
+
+nuxt-calendly@^0.1.14:
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/nuxt-calendly/-/nuxt-calendly-0.1.14.tgz#82558a33b70b937f5086609bc49ac1e43a19a042"
+  integrity sha512-YK5yuIl7AWYURwXzl9TUqh877IJXsPljlXRoxBldgrKAKB8y/Sp108tCSDVllhniMiHVsPv9MRRzOivWo66tnQ==
+  dependencies:
+    "@nuxt/kit" "^3.1.1"
+    defu "^6.1.2"
 
 nuxt@^3.6.3:
   version "3.6.3"

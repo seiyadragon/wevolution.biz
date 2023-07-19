@@ -6,13 +6,13 @@ import { Container, Title, Heading } from '../.nuxt/components';
         <header>
             <Navbar />
         </header>
-        <div class="spaceWaster"></div>
-        <Container>
-            <Heading :level="1">{{ pageData.Heading1[0] }}</Heading>
-            <Heading :level="2">{{ pageData.Heading2[0] }}</Heading>
-        </Container>
-        <div class="spaceWaster"></div>
-        <GradientPanel middleColor="red" top-color="#FF6539" bottomColor="#FF6539">
+        <GradientPanel middleColor="#FF6539" top-color="#FF6539" bottomColor="#FF6539">
+            <Container>
+                <Heading :level="1">{{ pageData.Heading1[0] }}</Heading>
+                <Heading :level="2">{{ pageData.Heading2[0] }}</Heading>
+            </Container>
+        </GradientPanel>
+        <GradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[0] }}</Heading>
                 <Text>{{ pageData.Paragraph1[0] }}</Text>
@@ -22,7 +22,7 @@ import { Container, Title, Heading } from '../.nuxt/components';
                 <Text>{{ pageData.Paragraph1[4] }}</Text>
             </Container>
         </GradientPanel>
-        <GradientPanel middleColor="#309960" top-color="#FF6539" bottomColor="#FF6539">
+        <GradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[1] }}</Heading>
                 <Text>{{ pageData.Paragraph2[0] }}</Text>
@@ -30,6 +30,17 @@ import { Container, Title, Heading } from '../.nuxt/components';
                 <Text>{{ pageData.Paragraph2[2] }}</Text>
                 <Text>{{ pageData.Paragraph2[3] }}</Text>
                 <CalendlyButton />
+            </Container>
+        </GradientPanel>
+        <GradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
+            <Container>
+                <Heading :level="3">{{ pageData.Heading3[2] }}</Heading>
+                <div class="testimonial">
+                    <YoutubeVideo videoID="CZeE_haBLE8"/>
+                    <YoutubeVideo videoID="zd_C21uphks"/>
+                    <YoutubeVideo videoID="H9Oz9tnG4K0"/>
+                    <YoutubeVideo videoID="-XejH0hO2T4"/>
+                </div>
             </Container>
         </GradientPanel>
     </div>
@@ -48,8 +59,14 @@ import { Container, Title, Heading } from '../.nuxt/components';
 
 <style lang="scss" scoped>
 
-    .spaceWaster {
-        height: 128px;
+    .testimonial {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 32px;
+        overflow-x: scroll;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
 </style>
