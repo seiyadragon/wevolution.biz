@@ -1,12 +1,23 @@
 <template>
 
     <div class="meetingButtonHolder">
-        <NuxtLink to="/calendly" class="bookButton">
+        <NuxtLink to="/calendly" :class="smallButton ? 'alternateBookButton' : 'bookButton'">
             Book a call
         </NuxtLink>
     </div>
 
 </template>
+
+<script lang="ts" setup>
+
+    const props = defineProps({
+        smallButton: {
+            type: Boolean,
+            default: false
+        }
+    })
+
+</script>
 
 <style lang="scss" scoped>
 
@@ -24,17 +35,65 @@
         .bookButton {
             background-color: transparent;
             border: 2px solid gold;
-            border-radius: 32px;
+            border-radius: 8px;
             color: gold;
-            font-size: 3rem;
+            
             font-weight: 600;
-            padding: 0.15rem 1rem;
+            padding: 0.5rem 1rem;
             transition: all 0.2s ease-in-out;
             text-decoration: none;
 
             &:hover {
                 background-color: gold;
                 color: black;
+            }
+
+            @media screen and (min-width: 320px) {
+                font-size: 2.5rem;
+            }
+        
+            @media screen and (min-width: 568px) {
+                font-size: 3.5rem;
+            }   
+        
+            @media screen and (min-width: 768px) {
+                font-size: 4.5rem;
+            }
+        
+            @media screen and (min-width: 1900px) {
+                font-size: 5rem;
+            }
+        }
+
+        .alternateBookButton {
+            background-color: transparent;
+            border: 2px solid gold;
+            color: gold;
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+
+            &:hover {
+                background-color: gold;
+                color: black;
+            }
+
+            @media screen and (min-width: 320px) {
+                font-size: 0.9rem;
+            }
+        
+            @media screen and (min-width: 568px) {
+                font-size: 1.5rem;
+            }   
+        
+            @media screen and (min-width: 768px) {
+                font-size: 1.5rem;
+            }
+        
+            @media screen and (min-width: 1900px) {
+                font-size: 2rem;
             }
         }
     }

@@ -29,7 +29,14 @@ import { Container, Title, Heading } from '../.nuxt/components';
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[2] }}</Heading>
                 <div class="testimonial">
-                    <YoutubeVideo v-for="video in pageData.YoutubeVideos" :videoID="video"/>
+                    <YoutubeVideo v-for="video in pageData.YoutubeVideos" 
+                        :videoID="video"
+                        width="256px"
+                        height="144px"
+                    />
+                </div>
+                <div class="projects">
+                    <img v-for="image in pageData.ProjectScreenshots" class="project" :src="image" />
                 </div>
             </Container>
         </GradientPanel>
@@ -51,12 +58,72 @@ import { Container, Title, Heading } from '../.nuxt/components';
 
     .testimonial {
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 32px;
-        overflow-x: scroll;
-        padding-left: 16px;
-        padding-right: 16px;
+        display: flex;
+        padding-left: auto;
+        padding-right: auto;
+        row-gap: 32px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @media screen and (min-width: 320px) {
+            flex-direction: column;
+            row-gap: 0px;
+            padding-left: 12px;
+        }
+    
+        @media screen and (min-width: 568px) {
+            flex-direction: row;
+            column-gap: 16px;
+        }   
+    
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            column-gap: 32px;
+        }
+    
+        @media screen and (min-width: 1900px) {
+            flex-direction: row;
+            column-gap: 32px;
+        }
+    }
+
+    .projects {
+        width: 100%;
+        display: flex;
+        padding-left: auto;
+        padding-right: auto;
+        row-gap: 64px;
+        column-gap: 32px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 32px;
+
+        @media screen and (min-width: 320px) {
+            flex-direction: column;
+        }
+    
+        @media screen and (min-width: 568px) {
+            flex-direction: row;
+        }   
+    
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+        }
+    
+        @media screen and (min-width: 1900px) {
+            flex-direction: row;
+        }
+
+        .project {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            width: 256px;
+            height: 144px;
+        }
     }
 
     .textShadow {

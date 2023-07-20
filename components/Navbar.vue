@@ -9,7 +9,7 @@ import { Container, Navbar, NuxtLink, Heading } from '../.nuxt/components';
                     <Heading :level="1" class="banner">Wevolution</Heading>
                 </NuxtLink>
                 <div class="navbarLinks">
-                    <CalendlyButton />
+                    <CalendlyButton :smallButton="true" />
                 </div>
             </div>
         </Container>
@@ -26,12 +26,9 @@ import { Container, Navbar, NuxtLink, Heading } from '../.nuxt/components';
     }
 
     .navbar {
-        position: sticky;
-        top: 0;
         width: 100%;
         background: rgb(0,0,0);
         background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-        height: 88px;
         border-bottom: 6px solid gold;
         backdrop-filter: blur(10px);
         display: flex;
@@ -43,6 +40,26 @@ import { Container, Navbar, NuxtLink, Heading } from '../.nuxt/components';
             align-items: center;
             width: 100%;
             height: 100%;
+
+            .navbarLinks {
+                display: flex;
+            }
+        }
+
+        @media screen and (min-width: 320px) {
+            height: 66px;
+        }
+    
+        @media screen and (min-width: 568px) {
+            height: 66px;
+        }   
+    
+        @media screen and (min-width: 768px) {
+            height: 88px;
+        }
+    
+        @media screen and (min-width: 1900px) {
+            height: 88px;
         }
     }
 
@@ -52,16 +69,53 @@ import { Container, Navbar, NuxtLink, Heading } from '../.nuxt/components';
         text-decoration: none;
 
         img {
-            width: 88px;
-            height: 88px;
             animation: spin 100s linear infinite;
+
+            @media screen and (min-width: 320px) {
+                height: 44px;
+                width: 44px;
+            }
+        
+            @media screen and (min-width: 568px) {
+                height: 66px;
+                width: 66px;
+            }   
+        
+            @media screen and (min-width: 768px) {
+                height: 88px;
+                width: 88px;
+            }
+        
+            @media screen and (min-width: 1900px) {
+                height: 88px;
+                width: 88px;
+            }
         }
 
         .banner {
             color: white;
             margin-left: 16px;
             text-decoration: none;
-            font-size: 2em;
+
+            @media screen and (min-width: 320px) {
+                font-size: 1rem;
+                visibility: hidden;
+            }
+        
+            @media screen and (min-width: 568px) {
+                font-size: 1.5rem;
+                visibility: visible;
+            }   
+        
+            @media screen and (min-width: 768px) {
+                font-size: 1.5rem;
+                visibility: visible;
+            }
+        
+            @media screen and (min-width: 1900px) {
+                font-size: 2rem;
+                visibility: visible;
+            }
         }
     }
 
