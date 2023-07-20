@@ -3,6 +3,8 @@ import { Container, Title, Heading } from '../.nuxt/components';
 <template>
 
     <div>
+        <Title>{{ pageData.Title }}</Title>
+        <Meta name="description" :content="pageData.Description" />
         <header>
             <Navbar />
         </header>
@@ -36,7 +38,11 @@ import { Container, Title, Heading } from '../.nuxt/components';
                     />
                 </div>
                 <div class="projects">
-                    <img v-for="image in pageData.ProjectScreenshots" class="project" :src="image" />
+                    <img v-for="image in pageData.ProjectScreenshots" 
+                        class="project" 
+                        :src="image" 
+                        alt="project screenshot"
+                    />
                 </div>
             </Container>
         </GradientPanel>
