@@ -15,13 +15,13 @@ import { Container, Title, Heading } from '../.nuxt/components';
         <GradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[0] }}</Heading>
-                <Text v-for="i in pageData.Paragraph1.length">{{ pageData.Paragraph1[i] }}</Text>
+                <Text v-for="text in pageData.Paragraph1">{{ text }}</Text>
             </Container>
         </GradientPanel>
         <GradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[1] }}</Heading>
-                <Text v-for="i in pageData.Paragraph2.length">{{ pageData.Paragraph2[i] }}</Text>
+                <Text v-for="text in pageData.Paragraph2">{{ text }}</Text>
                 <CalendlyButton />
             </Container>
         </GradientPanel>
@@ -38,6 +38,30 @@ import { Container, Title, Heading } from '../.nuxt/components';
                 <div class="projects">
                     <img v-for="image in pageData.ProjectScreenshots" class="project" :src="image" />
                 </div>
+            </Container>
+        </GradientPanel>
+        <GradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
+            <Container>
+                <Heading :level="3">{{ pageData.Heading3[3] }}</Heading>
+                <Text v-for="text in pageData.Paragraph3">{{ text }}</Text>
+            </Container>
+        </GradientPanel>
+        <GradientPanel middleColor="#c2b510" top-color="#FF6539" bottomColor="#FF6539">
+            <Container>
+                <Heading :level="3">{{ pageData.Heading3[4] }}</Heading>
+                <Text v-for="text in pageData.Paragraph4">{{ text }}</Text>
+            </Container>
+        </GradientPanel>
+        <GradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
+            <Container>
+                <Heading :level="3">{{ pageData.Heading3[5] }}</Heading>
+                <Text v-for="text in pageData.Paragraph5">{{ text }}</Text>
+            </Container>
+        </GradientPanel>
+        <GradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
+            <Container>
+                <Heading :level="3">{{ pageData.Heading3[6] }}</Heading>
+                <Text v-for="text in pageData.Paragraph6">{{ text }}</Text>
             </Container>
         </GradientPanel>
     </div>
