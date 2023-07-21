@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "nuxt-calendly": "^0.1.14",
+    "nuxt-icon": "^0.4.2",
     "sass": "^1.63.6"
   }
 }

@@ -38,12 +38,14 @@
 <style lang="scss" scoped>
 
     iframe {
-        outline: none;
-        border: solid 12px white;
-        border-radius: 32px;
-        box-shadow: 0px 0px 32px 0px rgba(0,0,0,0.75);
-        margin-top: 32px;
-        margin-bottom: 32px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        width: 256px;
+        height: 144px;
     }
 
 </style>

@@ -1,5 +1,3 @@
-import { Container, Title, Heading } from '../.nuxt/components';
-
 <template>
 
     <div>
@@ -30,8 +28,8 @@ import { Container, Title, Heading } from '../.nuxt/components';
         <GradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[2] }}</Heading>
-                <div class="testimonial">
-                    <YoutubeVideo v-for="video in pageData.YoutubeVideos" 
+                <div class="projects">
+                    <YoutubeVideo class="project" v-for="video in pageData.YoutubeVideos" 
                         :videoID="video"
                         width="256px"
                         height="144px"
@@ -70,6 +68,16 @@ import { Container, Title, Heading } from '../.nuxt/components';
                 <Text v-for="text in pageData.Paragraph6">{{ text }}</Text>
             </Container>
         </GradientPanel>
+        <GradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
+            <Container>
+                <Heading :level="3">{{ pageData.Heading3[7] }}</Heading>
+                <Text v-for="text in pageData.Paragraph7">{{ text }}</Text>
+                <CalendlyButton />
+            </Container>
+        </GradientPanel>
+        <footer>
+            <Footer />
+        </footer>
     </div>
 
 </template>
@@ -85,38 +93,6 @@ import { Container, Title, Heading } from '../.nuxt/components';
 </script>
 
 <style lang="scss" scoped>
-
-    .testimonial {
-        width: 100%;
-        display: flex;
-        padding-left: auto;
-        padding-right: auto;
-        row-gap: 32px;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        @media screen and (min-width: 320px) {
-            flex-direction: column;
-            row-gap: 0px;
-            padding-left: 12px;
-        }
-    
-        @media screen and (min-width: 568px) {
-            flex-direction: row;
-            column-gap: 16px;
-        }   
-    
-        @media screen and (min-width: 768px) {
-            flex-direction: row;
-            column-gap: 32px;
-        }
-    
-        @media screen and (min-width: 1900px) {
-            flex-direction: row;
-            column-gap: 32px;
-        }
-    }
-
     .projects {
         width: 100%;
         display: flex;
@@ -154,10 +130,6 @@ import { Container, Title, Heading } from '../.nuxt/components';
             width: 256px;
             height: 144px;
         }
-    }
-
-    .textShadow {
-        text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
     }
 
 </style>
@@ -199,6 +171,10 @@ import { Container, Title, Heading } from '../.nuxt/components';
     body {
         background-color: #ff6539;
         color: #fff;
+    }
+
+    .textShadow {
+        text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
     }
 
 </style>

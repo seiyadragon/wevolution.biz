@@ -1,6 +1,6 @@
 <template>
 
-    <div class="meetingButtonHolder">
+    <div class="meetingButtonHolder" :style="smallButton ? 'margin-top: 0px' : 'margin-top: 64px'">
         <NuxtLink to="/calendly" :class="smallButton ? 'alternateBookButton' : 'bookButton'">
             Book a call
         </NuxtLink>
@@ -25,19 +25,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
         width: 100%;
         height: 64px;
-        margin-top: 32px;
-        margin-bottom: 32px;
+        margin-top: 64px;
 
         .bookButton {
             background-color: transparent;
             border: 2px solid gold;
             border-radius: 8px;
             color: gold;
-            
             font-weight: 600;
             padding: 0.5rem 1rem;
             transition: all 0.2s ease-in-out;
