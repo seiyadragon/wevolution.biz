@@ -2,4 +2,5 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["nuxt-calendly", "nuxt-icon"],
+  plugins: [{ src: '~/plugins/vercel.ts', mode: 'client' }]
 })
