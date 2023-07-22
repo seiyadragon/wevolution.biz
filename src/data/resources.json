@@ -1,0 +1,37 @@
+{
+    "Resources": [
+        {
+            "name": "Business: Everything I know",
+            "slug": "business-everything-i-know",
+            "description": "Everything I know about business in one big fat list.",
+            "image": "https://images.unsplash.com/photo-1623118176012-9b0c6fa0712d?download=true",
+            "category": "Business and Entrepreneurship",
+            "body": [
+                {
+                    "Heading": "Introduction",
+                    "Paragraphs": [
+                        "Business. What is business? Some may say it’s to exchange goods or services for money. And they are right, but when you look deep down, it’s simply an exchange of value for value.",
+                        "I’ve been in business for a while now, and I’ve learned a lot. I’ve learned from my own mistakes, and I’ve learned from others. I’ve learned from books, and I’ve learned from experience. I’ve learned from my own business, and I’ve learned from other businesses.",
+                        "You provide value to your customers in the form of goods or services, and they provide value to you in the form of income. Doing your regular day job, is a form of business even if you don’t see it as such. Albeit it’s a form of business in which you have almost no control or leverage over the situation. They tell you how much you’re going to be paid, you show up, do the job, and get paid just that. With the added drawback that they get to tell you when to show up and what to do at every moment of the day you’re working or them.",
+                        "But the world does not work this way, it never has. When someone has skills that are truly in demand, they get to set their price, their hours, and everything they could desire, because they are irreplaceable. If they are gone the business is gone.",
+                        "The issue with that these days is that education is a business like any other. And the ease of entry for dumb 18-year-olds to get student loans, they don’t understand is impressive, to say the least. And honestly, I have to say it, College simply isn’t that challenging, I’m sure certain degrees will be hard no matter what, but overall it’s far easier than it’s ever been.",
+                        "You can teach the average person to do anything and do it well. You could probably teach an ape to do all the daily tasks your average person has to perform. This has made competition in every field the hardest it’s ever been."
+                    ]
+                },
+                {
+                    "Heading": "Why am I Writing This?",
+                    "Paragraphs": [
+                        "Before I can answer this question, I have to talk a little bit about myself. I am 21 years old, which some may consider too young to be writing about business, what the hell do I know right?",
+                        "And maybe they are right. But what I do know is that I have dedicated a large part of my life to studying. At first, it started with science then philosophy, and lately, the sole focus of my life has been self-improvement and business.",
+                        "I was originally born in Cuba, my parents lived in a small house behind my grandparent’s house. It was a living room and a bedroom, nothing else. As you can imagine things were difficult. Eventually my dad, with some help built a restroom onto the house which made life a lot easier. I remember it as one of the first luxuries I ever got.",
+                        "We had running water since someone had set up all the infrastructure long before I was born. There was a “well” but it had a motor and when turned on would fill a tank that would supply both houses with water. Eventually, the motor broke and we no longer even had running water, this was one of the first true inconveniences of my life. Now occasionally we had to go out and pump the water by hand.",
+                        "Eventually through the hard work of my parents, who I will be forever thankful to. We were able to leave Cuba and come to the United States, where even if you don’t make a lot of money as long as you’re willing to work, you will live comfortably.",
+                        "It was tough to adapt to a whole new environment, but I managed, to the point where I somewhat consider myself more American than Cuban. Even though I wasn’t born here, I have spent the most time here.",
+                        "I have been inspired by the work of many great men, some in the past, while some are still alive and continuing to grow their wealth and power. Men such as Andrew Carnegie, John Rockefeller, John P. Morgan, Thomas Edison, Bill Gates, Elon Musk, Andrew Tate, Mark Zuckerberg, and many more.",
+                        "And my goal is to learn and also teach how these men were able to achieve greatness in their business. How they managed to influence entire nations and grow their wealth and power. And apply this in my own life and business to achieve the same level of success."
+                    ]
+                }
+            ]
+        }
+    ]
+}

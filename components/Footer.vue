@@ -47,9 +47,6 @@
                         </Text>
                     </div>
                 </div>
-                <div class="footerSection">
-                    <h4>Links</h4>
-                </div>
             </div>
         </Container>
         <div class="copyrightSection">

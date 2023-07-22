@@ -9,6 +9,7 @@ import { Container, Navbar, NuxtLink, Heading } from '../.nuxt/components';
                     <Heading :level="1" class="banner">Wevolution</Heading>
                 </NuxtLink>
                 <div class="navbarLinks">
+                    <NuxtLink to="/learning" class="navbarLink">Learning</NuxtLink>
                     <CalendlyButton :smallButton="true" />
                 </div>
             </div>
@@ -33,6 +34,7 @@ import { Container, Navbar, NuxtLink, Heading } from '../.nuxt/components';
         backdrop-filter: blur(10px);
         display: flex;
         align-items: center;
+        height: 88px;
 
         .navbarInner {
             display: flex;
@@ -43,6 +45,43 @@ import { Container, Navbar, NuxtLink, Heading } from '../.nuxt/components';
 
             .navbarLinks {
                 display: flex;
+                align-items: center;
+                column-gap: 16px;
+
+                .navbarLink {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    padding: 8px 16px;
+                    border-radius: 8px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    transition: background-color 0.5s ease;
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
+
+                    @media screen and (min-width: 320px) {
+                        font-size: 1rem;
+                        padding: 4px 8px;
+                    }
+                
+                    @media screen and (min-width: 568px) {
+                        font-size: 1.5rem;
+                        padding: 8px 16px;
+                    }   
+                
+                    @media screen and (min-width: 768px) {
+                        font-size: 1.5rem;
+                        padding: 8px 16px;
+                    }
+                
+                    @media screen and (min-width: 1900px) {
+                        font-size: 2rem;
+                        padding: 8px 16px;
+                    }
+                }
             }
         }
 
@@ -67,6 +106,7 @@ import { Container, Navbar, NuxtLink, Heading } from '../.nuxt/components';
         display: flex;
         align-items: center;
         text-decoration: none;
+        width: 25%;
 
         img {
             animation: spin 100s linear infinite;
@@ -104,7 +144,7 @@ import { Container, Navbar, NuxtLink, Heading } from '../.nuxt/components';
         
             @media screen and (min-width: 568px) {
                 font-size: 1.5rem;
-                visibility: visible;
+                visibility: hidden;
             }   
         
             @media screen and (min-width: 768px) {

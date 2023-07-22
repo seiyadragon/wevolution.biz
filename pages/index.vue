@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div class="whiteText">
         <Title>{{ pageData.Title }}</Title>
         <Meta name="description" :content="pageData.Description" />
         <header>
@@ -170,11 +170,18 @@
 
     body {
         background-color: #ff6539;
-        color: #fff;
+    }
+
+    .whiteText {
+        color: white;
     }
 
     .textShadow {
         text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .blackText {
+        color: black;
     }
 
 </style>
