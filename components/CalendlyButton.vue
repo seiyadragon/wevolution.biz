@@ -38,6 +38,7 @@
             padding: 0.5rem 1rem;
             transition: all 0.2s ease-in-out;
             text-decoration: none;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 
             &:hover {
                 background-color: gold;
@@ -70,6 +71,7 @@
             padding: 0.5rem 1rem;
             transition: all 0.2s ease-in-out;
             text-decoration: none;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 
             &:hover {
                 background-color: gold;
