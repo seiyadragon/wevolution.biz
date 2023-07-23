@@ -1,10 +1,12 @@
 <template>
-    <div class="gradientPanel">
+    <div class="gradientPanel" data-aos="zoom-in-bottom" data-aos-delay="50" data-aos-easing="ease-in-out" data-aos-duration="1500">
         <div class="gradientPanelTop">
 
         </div>
         <div class="gradientPanelCenter">
-            <slot />
+            <div>
+                <slot />
+            </div>
         </div>
         <div class="gradientPanelBottom">
 
@@ -32,6 +34,18 @@
 </script>
 
 <style lang="scss" scoped>
+    @keyframes popOut {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
     .gradientPanel {
         background-color: transparent;
         margin-left: auto;
@@ -43,6 +57,7 @@
         justify-content: space-evenly;
         padding-top: 32px;
         padding-bottom: 32px;
+        //animation: popOut 10s ease;
 
         .gradientPanelTop {
             background-color: transparent;

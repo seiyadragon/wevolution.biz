@@ -6,13 +6,13 @@
         <header>
             <Navbar />
         </header>
-        <GradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
+        <LazyGradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="1" class="textShadow">{{ pageData.Heading1[0] }}</Heading>
                 <Heading :level="2" class="textShadow">{{ pageData.Heading2[0] }}</Heading>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3" class="textShadow">{{ pageData.Heading3[0] }}</Heading>
                 <NuxtLink class="resourceLink" v-for="resource in webDesignAndDevelopment" :key="resource.slug" :to="`/resources/${resource.slug}`">
@@ -20,8 +20,8 @@
                     <Text>{{ resource.name }}</Text>
                 </NuxtLink>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3" class="textShadow">{{ pageData.Heading3[1] }}</Heading>
                 <NuxtLink class="resourceLink" v-for="resource in socialMediaAndMarketing" :key="resource.slug" :to="`/resources/${resource.slug}`">
@@ -29,8 +29,8 @@
                     <Text>{{ resource.name }}</Text>
                 </NuxtLink>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3" class="textShadow">{{ pageData.Heading3[2] }}</Heading>
                 <NuxtLink class="resourceLink" v-for="resource in businessAndEntrepreneurship" :key="resource.slug" :to="`/resources/${resource.slug}`">
@@ -38,8 +38,8 @@
                     <Text>{{ resource.name }}</Text>
                 </NuxtLink>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3" class="textShadow">{{ pageData.Heading3[3] }}</Heading>
                 <NuxtLink class="resourceLink" v-for="resource in programmingAndComputerScience" :key="resource.slug" :to="`/resources/${resource.slug}`">
@@ -47,8 +47,8 @@
                     <Text>{{ resource.name }}</Text>
                 </NuxtLink>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="#c2b510" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="#c2b510" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3" class="textShadow">{{ pageData.Heading3[4] }}</Heading>
                 <NuxtLink class="resourceLink" v-for="resource in DataScienceAndAnalytics" :key="resource.slug" :to="`/resources/${resource.slug}`">
@@ -56,8 +56,8 @@
                     <Text>{{ resource.name }}</Text>
                 </NuxtLink>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3" class="textShadow">{{ pageData.Heading3[5] }}</Heading>
                 <NuxtLink class="resourceLink" v-for="resource in SelfDevelopment" :key="resource.slug" :to="`/resources/${resource.slug}`">
@@ -65,8 +65,8 @@
                     <Text>{{ resource.name }}</Text>
                 </NuxtLink>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3" class="textShadow">{{ pageData.Heading3[6] }}</Heading>
                 <NuxtLink class="resourceLink" v-for="resource in PersonalStories" :key="resource.slug" :to="`/resources/${resource.slug}`">
@@ -74,8 +74,8 @@
                     <Text>{{ resource.name }}</Text>
                 </NuxtLink>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3" class="textShadow">{{ pageData.Heading3[7] }}</Heading>
                 <NuxtLink class="resourceLink" v-for="resource in AdditionalResources" :key="resource.slug" :to="`/resources/${resource.slug}`">
@@ -83,9 +83,9 @@
                     <Text>{{ resource.name }}</Text>
                 </NuxtLink>
             </Container>
-        </GradientPanel>
+        </LazyGradientPanel>
         <footer>
-            <Footer />
+            <LazyFooter />
         </footer>
     </div>
 

@@ -6,18 +6,18 @@
         <header>
             <Navbar />
         </header>
-        <GradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
+        <LazyGradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="1" class="textShadow">{{ pageData.Heading1[0] }}</Heading>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="white" top-color="#FF6539" bottomColor="#FF6539" >
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="white" top-color="#FF6539" bottomColor="#FF6539" >
             <Container>
                 <CalendlyInlineWidget v-bind="calendlyOptions" style="min-width:300px;height:996px;overflow:hidden;" class="calendlyWidget"/>
             </Container>
-        </GradientPanel>
+        </LazyGradientPanel>
         <footer>
-            <Footer />
+            <LazyFooter />
         </footer>
     </div>
 

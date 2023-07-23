@@ -6,26 +6,26 @@
         <header>
             <Navbar />
         </header>
-        <GradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
+        <LazyGradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="1" class="textShadow">{{ pageData.Heading1[0] }}</Heading>
                 <Heading :level="2" class="textShadow">{{ pageData.Heading2[0] }}</Heading>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[0] }}</Heading>
                 <Text v-for="text in pageData.Paragraph1">{{ text }}</Text>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[1] }}</Heading>
                 <Text v-for="text in pageData.Paragraph2">{{ text }}</Text>
                 <CalendlyButton />
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[2] }}</Heading>
                 <div class="projects">
@@ -43,40 +43,40 @@
                     />
                 </div>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[3] }}</Heading>
                 <Text v-for="text in pageData.Paragraph3">{{ text }}</Text>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="#c2b510" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="#c2b510" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[4] }}</Heading>
                 <Text v-for="text in pageData.Paragraph4">{{ text }}</Text>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[5] }}</Heading>
                 <Text v-for="text in pageData.Paragraph5">{{ text }}</Text>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[6] }}</Heading>
                 <Text v-for="text in pageData.Paragraph6">{{ text }}</Text>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ pageData.Heading3[7] }}</Heading>
                 <Text v-for="text in pageData.Paragraph7">{{ text }}</Text>
                 <CalendlyButton />
             </Container>
-        </GradientPanel>
+        </LazyGradientPanel>
         <footer>
-            <Footer />
+            <LazyFooter />
         </footer>
     </div>
 
@@ -142,6 +142,7 @@
     header {
         position: sticky;
         top: 0;
+        z-index: 99;
     }
 
     //set global styles

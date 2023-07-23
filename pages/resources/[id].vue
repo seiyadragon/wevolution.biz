@@ -6,12 +6,12 @@
         <header>
             <Navbar />
         </header>
-        <GradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
+        <LazyGradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
             <Container class="whiteText">
                 <Heading :level="1" class="textShadow">{{ resourceData.name }}</Heading>
             </Container>
-        </GradientPanel>
-        <GradientPanel middleColor="white" top-color="#FF6539" bottomColor="#FF6539" >
+        </LazyGradientPanel>
+        <LazyGradientPanel middleColor="white" top-color="#FF6539" bottomColor="#FF6539" >
             <Container class="blackText">
                 <img :src="resourceData.image" alt="resource image" class="img-fluid" />
                 <div v-for="section in resourceData.body">
@@ -19,9 +19,9 @@
                     <Text v-for="paragraph in section.Paragraphs">{{ paragraph }}</Text>
                 </div>
             </Container>
-        </GradientPanel>
+        </LazyGradientPanel>
         <footer class="whiteText">
-            <Footer />
+            <LazyFooter />
         </footer>
     </div>
 
@@ -38,13 +38,18 @@
     const id = ref(route.params.id);
     const resourceData = ref({} as Resource)
 
+    export type ResourceBodySection = {
+        Heading: string,
+        Paragraphs: string[]
+    }
+
     export type Resource = {
         name: string,
         slug: string,
         description: string,
         image: string,
         category: string,
-        body: string[]
+        body: ResourceBodySection[]
     }
 
     onMounted(() => {
@@ -58,7 +63,7 @@
             description: '',
             image: '',
             category: '',
-            body: [] as string[],
+            body: [] as ResourceBodySection[],
         }
 
         for (let i = 0; i < pageData.value.Resources.length; i++) {
