@@ -50,12 +50,16 @@
                 background-color: transparent;
                 width: 100%;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: space-evenly;
                 align-items: center;
                 height: 100%;
                 margin-top: 128px;
                 margin-bottom: 64px;
+
+                @media screen and (min-width: 568px) {
+                    flex-direction: row;
+                }   
 
                 .footerLink {
                     background-color: transparent;
@@ -66,7 +70,7 @@
                     padding: 8px;
                     padding-left: 16px;
                     padding-right: 16px;
-                    margin: 8px;
+                    margin: 4px;
                     border: solid 3px gold;
                     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
                     width: 100%;
@@ -81,6 +85,7 @@
 
                     @media screen and (min-width: 320px) {
                         font-size: 32px;
+                        width: 50%;
                     }
             
                     @media screen and (min-width: 568px) {
