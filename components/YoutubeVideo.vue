@@ -44,8 +44,8 @@
         overflow: hidden;
         margin-left: auto;
         margin-right: auto;
-        width: 256px;
-        height: 144px;
+        width: v-bind(width);
+        height: v-bind(height);
     }
 
 </style>

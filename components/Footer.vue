@@ -9,16 +9,16 @@
                 </div>
                 <div class="footerInner">
                     <NuxtLink class="footerLink" to="https://twitter.com/@arlenmolina101">
-                        <Icon name="fa6-brands:twitter" size="64px"/>
+                        <Icon name="fa6-brands:twitter"/>
                     </NuxtLink>
                     <NuxtLink class="footerLink" to="https://instagram.com/arlenmolina101">
-                        <Icon name="fa6-brands:instagram" size="64px"/>
+                        <Icon name="fa6-brands:instagram"/>
                     </NuxtLink>
                     <NuxtLink class="footerLink" to="https://www.linkedin.com/in/arlen-molina-423159183/">
-                        <Icon name="fa6-brands:linkedin" size="64px"/>
+                        <Icon name="fa6-brands:linkedin"/>
                     </NuxtLink>
                     <NuxtLink class="footerLink" to="https://t.me/@arlenmolina101">
-                        <Icon name="fa6-brands:telegram" size="64px"/>
+                        <Icon name="fa6-brands:telegram"/>
                     </NuxtLink>
                 </div>
             </div>
@@ -64,13 +64,35 @@
                     transition: all 0.3s ease-in-out;
                     border-radius: 8px;
                     padding: 8px;
+                    padding-left: 16px;
+                    padding-right: 16px;
                     margin: 8px;
                     border: solid 3px gold;
                     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
 
                     &:hover {
                         background-color: gold;
                         color: black;
+                    }
+
+                    @media screen and (min-width: 320px) {
+                        font-size: 32px;
+                    }
+            
+                    @media screen and (min-width: 568px) {
+                        font-size: 48px;
+                    }   
+            
+                    @media screen and (min-width: 768px) {
+                        font-size: 64px;
+                    }
+            
+                    @media screen and (min-width: 1900px) {
+                        font-size: 80px;
                     }
                 }
             }

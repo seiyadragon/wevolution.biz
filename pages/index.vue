@@ -1,78 +1,30 @@
 <template>
 
-    <div class="whiteText">
-        <Title>{{ pageData.Title }}</Title>
-        <Meta name="description" :content="pageData.Description" />
+    <div class="whiteText" v-if="pageLoaded">
+        <Title>{{ pageData.title }}</Title>
+        <Meta name="description" :content="pageData.description" />
         <header>
             <Navbar />
         </header>
         <LazyGradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
-                <Heading :level="1" class="textShadow">{{ pageData.Heading1[0] }}</Heading>
-                <Heading :level="2" class="textShadow">{{ pageData.Heading2[0] }}</Heading>
+                <Heading :level="1" class="textShadow">{{ pageData.heading1 }}</Heading>
+                <Heading :level="2" class="textShadow">{{ pageData.heading2 }}</Heading>
             </Container>
         </LazyGradientPanel>
-        <LazyGradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
+        <LazyGradientPanel v-for="section in pageData.sections" :middleColor="section.backgroundColor" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
-                <Heading :level="3">{{ pageData.Heading3[0] }}</Heading>
-                <Text v-for="text in pageData.Paragraph1">{{ text }}</Text>
-            </Container>
-        </LazyGradientPanel>
-        <LazyGradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
-            <Container>
-                <Heading :level="3">{{ pageData.Heading3[1] }}</Heading>
-                <Text v-for="text in pageData.Paragraph2">{{ text }}</Text>
-                <CalendlyButton />
-            </Container>
-        </LazyGradientPanel>
-        <LazyGradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
-            <Container>
-                <Heading :level="3">{{ pageData.Heading3[2] }}</Heading>
-                <div class="projects">
-                    <YoutubeVideo class="project" v-for="video in pageData.YoutubeVideos" 
-                        :videoID="video"
-                        width="256px"
-                        height="144px"
+                <Heading :level="3">{{ section.title }}</Heading>
+                <Text v-for="text in section.content">{{ text.children[0].text }}</Text>
+                <CalendlyButton v-if="section.cta"/>
+                <div v-if="section.testimonials" class="testimonials">
+                    <iframe class="wallOfLove"
+                        id="testimonialto-web-testimonials2-tag-all-light-animated" 
+                        src="https://embed-v2.testimonial.to/w/web-testimonials2?animated=on&theme=light&shadowColor=00000000&speed=1&tag=all" 
+                        frameborder="0" 
+                        scrolling="no"
                     />
                 </div>
-                <div class="projects">
-                    <img v-for="image in pageData.ProjectScreenshots" 
-                        class="project" 
-                        :src="image" 
-                        alt="project screenshot"
-                    />
-                </div>
-            </Container>
-        </LazyGradientPanel>
-        <LazyGradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
-            <Container>
-                <Heading :level="3">{{ pageData.Heading3[3] }}</Heading>
-                <Text v-for="text in pageData.Paragraph3">{{ text }}</Text>
-            </Container>
-        </LazyGradientPanel>
-        <LazyGradientPanel middleColor="#c2b510" top-color="#FF6539" bottomColor="#FF6539">
-            <Container>
-                <Heading :level="3">{{ pageData.Heading3[4] }}</Heading>
-                <Text v-for="text in pageData.Paragraph4">{{ text }}</Text>
-            </Container>
-        </LazyGradientPanel>
-        <LazyGradientPanel middleColor="#c32148" top-color="#FF6539" bottomColor="#FF6539">
-            <Container>
-                <Heading :level="3">{{ pageData.Heading3[5] }}</Heading>
-                <Text v-for="text in pageData.Paragraph5">{{ text }}</Text>
-            </Container>
-        </LazyGradientPanel>
-        <LazyGradientPanel middleColor="goldenrod" top-color="#FF6539" bottomColor="#FF6539">
-            <Container>
-                <Heading :level="3">{{ pageData.Heading3[6] }}</Heading>
-                <Text v-for="text in pageData.Paragraph6">{{ text }}</Text>
-            </Container>
-        </LazyGradientPanel>
-        <LazyGradientPanel middleColor="rgb(255, 0, 20)" top-color="#FF6539" bottomColor="#FF6539">
-            <Container>
-                <Heading :level="3">{{ pageData.Heading3[7] }}</Heading>
-                <Text v-for="text in pageData.Paragraph7">{{ text }}</Text>
-                <CalendlyButton />
             </Container>
         </LazyGradientPanel>
         <footer>
@@ -85,53 +37,61 @@
 <script lang="ts" setup>
 
     import { ref } from 'vue';
-    import data from '../src/data/index.json'
+    import {client} from '../extra/sanity'
 
     //load the file /data/index.json and put it in a ref use the fetch function
-    const pageData = ref(data);
+    const pageData = ref(await client.fetch(`*[_type == "homePage" && activeHomepage == true]`));
+    const pageLoaded = ref(false);
+
+    onMounted(async () => {
+        pageData.value = (await client.fetch(`*[_type == "homePage" && activeHomepage == true]`))[0]
+        pageLoaded.value = true;
+    });
 
 </script>
 
 <style lang="scss" scoped>
-    .projects {
-        width: 100%;
+    .testimonials {
         display: flex;
-        padding-left: auto;
-        padding-right: auto;
-        row-gap: 64px;
-        column-gap: 32px;
         justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 32px;
+        align-items: center;
+        width: 100%;
+        height: 256px;
+        margin-top: 64px;
+        column-gap: 8px;
+        row-gap: 8px;
+        flex-direction: row;
 
         @media screen and (min-width: 320px) {
-            flex-direction: column;
+            height: 370px;
         }
-    
+        
         @media screen and (min-width: 568px) {
-            flex-direction: row;
+            height: 618px;
         }   
-    
+        
         @media screen and (min-width: 768px) {
-            flex-direction: row;
+            height: 818px;
         }
-    
+        
         @media screen and (min-width: 1900px) {
-            flex-direction: row;
+            height: 818px;
         }
 
-        .project {
+        .wallOfLove {
             border: none;
             border-radius: 8px;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
             overflow: hidden;
             margin-left: auto;
             margin-right: auto;
-            width: 256px;
-            height: 144px;
+            width: 100%;
+            height: 100%;
+            max-width: 766px;
+            max-height: 800px;
+            border: solid 3px gold;
         }
     }
-
 </style>
 
 <style lang="scss">

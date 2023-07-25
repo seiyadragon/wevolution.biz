@@ -15,6 +15,8 @@
     "nuxt": "^3.6.3"
   },
   "dependencies": {
+    "@sanity/client": "^6.1.7",
+    "@sanity/image-url": "^1.0.2",
     "@vercel/analytics": "^1.0.1",
     "nuxt-calendly": "^0.1.14",
     "nuxt-icon": "^0.4.2",

@@ -8,7 +8,8 @@
         </header>
         <LazyGradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
-                <Heading :level="1" class="textShadow">{{ pageData.Heading1[0] }}</Heading>
+                <Heading :level="1" class="textShadow">{{ pageData.heading1 }}</Heading>
+                <Heading :level="2" class="textShadow">{{ pageData.heading2 }}</Heading>
             </Container>
         </LazyGradientPanel>
         <LazyGradientPanel middleColor="white" top-color="#FF6539" bottomColor="#FF6539" >
@@ -26,10 +27,11 @@
 <script lang="ts" setup>
 
     import { ref } from 'vue';
-    import data from '../src/data/calendly.json'
+    import {client} from '../extra/sanity'
 
     //load the file /data/index.json and put it in a ref use the fetch function
-    const pageData = ref(data);
+    const pageData = ref(await client.fetch(`*[_type == "calendlyPage" && activeCalendlyPage == true]`));
+    const pageLoaded = ref(false);
 
     const calendlyOptions = {
         url: "https://calendly.com/arlenmolina101/web-discussion",
@@ -39,5 +41,10 @@
             questions: "What are your goals for your website?",
         }
     }
+
+    onMounted(async () => {
+        pageData.value = (await client.fetch(`*[_type == "calendlyPage" && activeCalendlyPage == true]`))[0]
+        pageLoaded.value = true;
+    });
 
 </script>

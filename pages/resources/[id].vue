@@ -1,22 +1,24 @@
 <template>
 
-    <div>
-        <Title>{{ resourceData.name }}</Title>
-        <Meta name="description" :content="resourceData.description" />
+    <div v-if="pageLoaded">
+        <Title>{{ currentResource.title }}</Title>
+        <Meta name="description" :content="currentResource.description" />
         <header>
             <Navbar />
         </header>
         <LazyGradientPanel middleColor="orange" top-color="#FF6539" bottomColor="#FF6539">
             <Container class="whiteText">
-                <Heading :level="1" class="textShadow">{{ resourceData.name }}</Heading>
+                <Heading :level="1" class="textShadow">{{ currentResource.title }}</Heading>
             </Container>
         </LazyGradientPanel>
         <LazyGradientPanel middleColor="white" top-color="#FF6539" bottomColor="#FF6539" >
             <Container class="blackText">
-                <img :src="resourceData.image" alt="resource image" class="img-fluid" />
-                <div v-for="section in resourceData.body">
-                    <Heading :level="3">{{ section.Heading }}</Heading>
-                    <Text v-for="paragraph in section.Paragraphs">{{ paragraph }}</Text>
+                <img :src="urlFor(currentResource.image).toString()" alt="resource image" class="img-fluid" />
+                <div v-for="section in currentResource.content">
+                    <Heading :level="1" v-if="section.style == 'h1'">{{ section.children[0].text }}</Heading>
+                    <Heading :level="2" v-if="section.style == 'h2'">{{ section.children[0].text }}</Heading>
+                    <Heading :level="3" v-if="section.style == 'h3'">{{ section.children[0].text }}</Heading>
+                    <Text v-if="section.style == 'normal'">{{ section.children[0].text }}</Text>
                 </div>
             </Container>
         </LazyGradientPanel>
@@ -28,52 +30,46 @@
 </template>
 
 <script lang="ts" setup>
+
     import { ref } from 'vue';
-    import data from '../../src/data/resources.json'
+    import {client} from '../../extra/sanity'
+    import imageUrlBuilder from '@sanity/image-url'
 
     const route = useRoute();
+
     //load the file /data/index.json and put it in a ref use the fetch function
-    const pageData = ref(data);
+    const pageData = ref(await client.fetch(`*[_type == "learningPage" && activeLearningPage == true]`));
+    const pageLoaded = ref(false);
+    const currentResource = ref({} as any)
 
-    const id = ref(route.params.id);
-    const resourceData = ref({} as Resource)
+    // Get a pre-configured url-builder from your sanity client
+    const builder = imageUrlBuilder(client)
 
-    export type ResourceBodySection = {
-        Heading: string,
-        Paragraphs: string[]
+    // Then we like to make a simple function like this that gives the
+    // builder an image and returns the builder for you to specify additional
+    // parameters:
+    function urlFor(source: any) {
+        return builder.image(source)
     }
 
-    export type Resource = {
-        name: string,
-        slug: string,
-        description: string,
-        image: string,
-        category: string,
-        body: ResourceBodySection[]
-    }
 
-    onMounted(() => {
-        resourceData.value = grabCurrentResourceFromSlug(id.value.toString())
-    })
+    onMounted(async () => {
+        pageData.value = (await client.fetch(`*[_type == "learningPage" && activeLearningPage == true]`))[0]
 
-    const grabCurrentResourceFromSlug = (slug: string) => {
-        let result: Resource = {
-            name: '',
-            slug: '',
-            description: '',
-            image: '',
-            category: '',
-            body: [] as ResourceBodySection[],
-        }
+        pageData.value.sections.forEach(async (section: any) => {
+            if (section.content === undefined) return;
 
-        for (let i = 0; i < pageData.value.Resources.length; i++) {
-            if (pageData.value.Resources[i].slug == slug) {
-                result = pageData.value.Resources[i]
-            }
-        }
+            section.content.forEach((resource: any) => {
+                if (resource.slug.current === route.params.id) {
+                    currentResource.value = resource;
+                }
+            })
+        })
 
-        return result
-    }
+        console.log(currentResource.value)
+
+        pageLoaded.value = true;
+    });
 
 </script>
 
