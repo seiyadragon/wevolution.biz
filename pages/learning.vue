@@ -16,8 +16,15 @@
             <Container>
                 <Heading :level="3">{{ section.title }}</Heading>
                 <NuxtLink class="resourceLink" v-for="resource in section.content" :key="resource.slug.current" :to="`/resources/${resource.slug.current}`">
-                    <Icon name="el:file" size="24px"/>
-                    <Text>{{ resource.title }}</Text>
+                    <Text>
+                        <Icon name="el:file" size="24px"/>
+                        {{ resource.title }}
+                    </Text>
+                    <Text>
+                        {{ new Date(resource.timestamp).getMonth() + 1 }}/
+                        {{ new Date(resource.timestamp).getDate() }}/
+                        {{ new Date(resource.timestamp).getFullYear() }}
+                    </Text>
                 </NuxtLink>
             </Container>
         </LazyGradientPanel>
@@ -56,6 +63,7 @@
         display: flex;
         width: 100%;
         align-items: center;
+        justify-content: space-between;
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.2);

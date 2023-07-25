@@ -61,6 +61,19 @@ export default {
                                     type: 'slug'
                                 },
                                 {
+                                    name: 'timestamp',
+                                    title: 'Timestamp',
+                                    type: 'datetime',
+                                    options: {
+                                        dateFormat: 'MM-DD-YYYY',
+                                        timeFormat: 'hh:mm A'
+                                    },
+                                    autofill: {
+                                        method: 'timestamp',
+                                        param: 'MM-DD-YYYY'
+                                    }
+                                },
+                                {
                                     name: 'image',
                                     title: 'Image',
                                     type: 'image'
