@@ -1,6 +1,6 @@
 <template>
 
-    <div class="whiteText" v-if="pageLoaded">
+    <div class="whiteText" v-if="pageLoaded" style="text-align: center;">
         <Title>{{ pageData.title }}</Title>
         <Meta name="description" :content="pageData.description" />
         <header>

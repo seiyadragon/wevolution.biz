@@ -14,7 +14,7 @@
         </LazyGradientPanel>
         <LazyGradientPanel middleColor="white" top-color="#FF6539" bottomColor="#FF6539" >
             <Container class="blackText">
-                <div v-for="section in currentResource.content">
+                <div v-for="section in currentResource.content" style="text-align: left;">
                     <Heading :level="1" v-if="section.style == 'h1'">{{ section.children[0].text }}</Heading>
                     <Heading :level="2" v-if="section.style == 'h2'">{{ section.children[0].text }}</Heading>
                     <Heading :level="3" v-if="section.style == 'h3'">{{ section.children[0].text }}</Heading>

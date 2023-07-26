@@ -23,34 +23,12 @@
 
 <style lang="scss" scoped>
 
-    p {
+    p, span {
         font-weight: 400;
         text-align: center;
         margin-top: 1rem;
         margin-bottom: 1rem;
-
-        @media screen and (min-width: 320px) {
-            font-size: 1rem;
-        }
-    
-        @media screen and (min-width: 568px) {
-            font-size: 1rem;
-        }   
-    
-        @media screen and (min-width: 768px) {
-            font-size: 1rem;
-        }
-    
-        @media screen and (min-width: 1900px) {
-            font-size: 1rem;
-        }
-    }
-
-    span {
-        font-weight: 400;
-        text-align: center;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        text-align: inherit;
 
         @media screen and (min-width: 320px) {
             font-size: 1rem;
