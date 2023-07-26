@@ -15,17 +15,19 @@
         <LazyGradientPanel v-for="section in pageData.sections" :middleColor="section.backgroundColor" top-color="#FF6539" bottomColor="#FF6539">
             <Container>
                 <Heading :level="3">{{ section.title }}</Heading>
-                <NuxtLink class="resourceLink" v-for="resource in section.content" :key="resource.slug.current" :to="`/resources/${resource.slug.current}`">
-                    <div class="resourceTitle">
-                        <img :src="urlFor(resource.image).toString()" alt="resource image" class="thumbnail"/>
-                        <Heading :level="4"> {{ resource.title }} </Heading>
-                    </div>
-                    <Heading :level="4">
-                        {{ new Date(resource.timestamp).getMonth() + 1 }}/
-                        {{ new Date(resource.timestamp).getDate() }}/
-                        {{ new Date(resource.timestamp).getFullYear() }}
-                    </Heading>
-                </NuxtLink>
+                <div class="resourceContainer">
+                    <NuxtLink class="resourceLink" v-for="resource in section.content" :key="resource.slug.current" :to="`/resources/${resource.slug.current}`">
+                        <div class="resourceTitle">
+                            <img :src="urlFor(resource.image).toString()" alt="resource image" class="thumbnail"/>
+                            <Heading :level="4"> {{ resource.title }} </Heading>
+                        </div>
+                        <Heading :level="4">
+                            {{ new Date(resource.timestamp).getMonth() + 1 }}/
+                            {{ new Date(resource.timestamp).getDate() }}/
+                            {{ new Date(resource.timestamp).getFullYear() }}
+                        </Heading>
+                    </NuxtLink>
+                </div>
             </Container>
         </LazyGradientPanel>
         <footer>
@@ -91,6 +93,12 @@
             margin-right: 16px;
             border-radius: 100%;
         }
+    }
+
+    .resourceContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
     }
 
 </style>
